@@ -1,0 +1,42 @@
+ <!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+    <link rel="stylesheet" href="../css/style-global.css">
+    <link rel="stylesheet" href="../css/style-PRF.css">
+   </head>
+   <body>
+
+      <div class="container">
+         <h1 class="titulo">Informações do <br> usuario</h1>
+         <div class="info"><br>
+            <h3>Usuario:</h3>
+            <span id="nome">teste</span><br>
+            <h3>Email:</h3>
+            <span id="email">teste</span><br>
+            <h3>Senha:</h3>
+            <span id="senha">teste</span>
+         </div>
+         <button class="Button_senha" onclick="window.location.href = 'trocar-senha.html'" >Trocar Senha</button>
+      </div>
+
+      <script>
+
+      const param = new URLSearchParams(window.location.search)
+      const nome = param.get("n");
+      const e = param.get("e");
+      const s = param.get("s");
+
+      const email = atob(e)
+      const senha = atob(s)
+
+      document.getElementById("nome").innerHTML = nome;
+      document.getElementById("email").innerHTML = email;
+      document.getElementById("senha").innerHTML = senha;
+
+   </script>
+
+   </body>
+</html>

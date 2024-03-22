@@ -1,0 +1,69 @@
+.cabecalho{
+    width: 80%; 
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.637);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    height: 70px; 
+    margin: 30px auto; 
+}
+
+.container{
+    width: 80%;
+    border-radius: 20px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    background-color: rgba(255, 255, 255, 0.637);
+    margin: 50px auto; 
+}
+
+span{
+    margin: 3px;
+    font-size: 20px;
+}
+h4{
+    margin: 3px;
+    font-size: 20px;
+}
+
+.enviar{
+    width: 80%;
+    background-color: rgba(255, 76, 76, 0);
+    border: 4px solid rgba(255, 0, 0, 0.726);
+    border-radius: 20px;
+    font-size: 17px;
+    height: 40px;
+}
+
+.tabela{
+    margin:  auto;
+}
+
+td{ 
+    padding: 10px 20px; 
+    margin: 0px;
+}
+
+tr{
+    margin: 0px;
+    border-bottom: 2px solid black;
+
+}
+
+th{
+    margin: 0px;
+    padding: 0px 30px;
+    font-size: 20px;
+} 
+
+hr{
+    margin: 0px;
+    border: 1px solid black;
+}
+
+.celula{ 
+    height: 0px;
+    margin: 0px;
+}

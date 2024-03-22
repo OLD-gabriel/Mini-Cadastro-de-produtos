@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/style-global.css">
+        <link rel="stylesheet" href="../css/style-ADD.css">
+    </head>
+    <body>
+
+        <div class="container">
+            <h2 class="titulo">Adicionar Produto</h2>
+            <form action="../php/add-produto.php" method="post">
+                <div class="container-nome">
+                    <input type="text" class="input-nome" id="nome" name="nome" required>
+                    <label for="nome" class="label-nome">Insira o nome do produto</label>
+                </div>
+                <div class="container-QNT">
+                    <input type="number" class="input-QNT" id="quantidade" name="quantidade" required>
+                    <label for="quantidade" class="label-QNT">Insira a quantidade</label>
+                </div>
+                <div class="container-preco">
+                    <input type="number" class="input-preco" id="preco" name="preco" required>
+                    <label class="label-preco" for="preco">Preço do produto</label>
+                </div>
+               
+                <input type="submit" class="enviar">
+            </form>
+        </div>
+
+        <!-- Pop Up de sucesso -->
+    <div class="sobreposicao-popup-checked" id="popup-sucess">
+        <div class="conteudo-popup">
+            
+            <div class="check">
+                <div class="linha-checked-1"></div>
+                <div class="linha-checked-2"></div>
+            </div>
+
+            <h2>Completo!</h2>
+            <p>Você registrou o produto com Sucesso!  </p>
+            <button class="fechar-popup" onclick="fecharPopUp('popup-sucess')">Fechar</button>
+        </div>
+    </div>
+
+    <script>
+       
+        const param = new URLSearchParams(window.location.search)
+        const verif = param.get("status")
+
+        if(verif == "true"){
+            mostrarPopup('popup-sucess')
+        }
+        function mostrarPopup(id){
+            document.getElementById(id).style.display = "block";
+        }
+
+        function fecharPopUp(id){
+            document.getElementById(id).style.display = "none";
+        }
+
+    </script>
+
+    </body>
+</html>

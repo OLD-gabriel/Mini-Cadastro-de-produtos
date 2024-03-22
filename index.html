@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style-global.css">
+        <title>Login</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="titulo">Login</h1>
+            <form action="php/processar-login.php" method="post">
+
+                <div class="container-email">
+                    <input class="input-email" type="text" id="email"
+                        name="email" required>
+                    <label class="label-email" for="email">Email</label>
+                    <br>
+                </div>
+
+                <div class="container-senha">
+                    <input class="input-senha" type="text" id="senha" required
+                        name="senha">
+                    <label class="label-senha" for="senha">Senha</label>
+                </div>
+
+                <a class="esqueceu-senha" href="#"> Esqueceu a senha?</a><br>
+                <input class="input-submit" type="submit" value="Logar"
+                    name="enviar"><br>
+
+                <span class="criar-conta">Não tem uma conta?<a
+                        href="Html/create-account.html">registrar</a></span>
+
+            </form>
+        </div>
+
+        <!-- Pop UP de Erro -->
+        <div class="sobreposicao-popup-unchecked" id="Popup-erro">
+            <div class="conteudo-popup">
+
+                <div class="uncheck">
+                    <div class="linha-unchecked-1"></div>
+                    <div class="linha-unchecked-2"></div>
+                </div>
+
+                <h2 id="Titulo"></h2>
+                <p id="texto"></p>
+                <button class="fechar-popup-unchecked"
+                    onclick="fecharpopup('Popup-erro')">Fechar</button>
+            </div>
+        </div>
+
+        <script>
+            function getparams(nome){
+                const param = new URLSearchParams(window.location.search)
+                return param.get(nome)
+            }
+
+            const verificar_param = getparams("status")
+            if(verificar_param === "NotEmail"){
+                mostrarPopup("Titulo","texto","Error","Este email não está registrado! <br> cria uma conta para acessar.","Popup-erro")
+            }
+            if(verificar_param === "NotSenha"){
+                mostrarPopup("Titulo","texto","Error","A Senha digitada está Incorreta! <br> Tente Novamente","Popup-erro")
+            }
+
+
+            function mostrarPopup(IDtitulo,IDtexto,Titulo,texto,id){
+                console.log("exibido")
+                document.getElementById(id).style.display = "block"
+                document.getElementById(IDtitulo).innerHTML = Titulo
+                document.getElementById(IDtexto).innerHTML = texto
+            }
+
+            function fecharpopup(id){
+                document.getElementById(id).style.display = "none"
+            }
+
+        </script>
+
+    </body>
+</html>

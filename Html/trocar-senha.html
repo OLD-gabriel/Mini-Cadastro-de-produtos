@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+    <link rel="stylesheet" href="../css/style-global.css">
+    <link rel="stylesheet" href="../css/style-TRS.css">
+   </head>
+   <body> 
+
+      <div class="trocarsenha">
+         <h1 class="titulo">Trocar Senha</h1>
+         <form action="../php/trocar-senha.php" method="post">
+
+            <div class="container-Senha-antiga">
+               <input type="text" class="input-senha-antiga" id="senha-antiga"
+                  required name="senha-antiga">
+
+               <label for="senha-antiga" class="label-antiga">Senha
+                  Antiga</label>
+            </div>
+            <div class="container-Senha-nova">
+               <input type="text" class="input-senha-nova" id="senha-nova"
+                  required name="senha-nova">
+
+               <label class="label-senha" for="senha-nova">Senha nova</label>
+            </div>
+            <div class="container-Senha-novaR">
+               <input type="text" class="input-senha-novaR" id="senha-novaR"
+                  required name="senha-novaR">
+
+               <label class="label-senhaR" for="senha-novaR">Repita a
+                  Senha</label> <br>
+            </div>
+            <input type="submit" class="enviar">
+         </form>
+      </div>
+ 
+
+<!-- Pop Up de sucesso -->
+    <div class="sobreposicao-popup-checked" id="popup-sucess">
+        <div class="conteudo-popup">
+            
+            <div class="check">
+                <div class="linha-checked-1"></div>
+                <div class="linha-checked-2"></div>
+            </div>
+
+            <h2>Completo!</h2>
+            <p>Você redefiniu sua senha com Sucesso! <br> retorne a pagina de login </p>
+            <button class="fechar-popup" onclick="window.location.href = '../index.html'">Voltar</button>
+        </div>
+    </div>
+    
+        <!-- Pop UP de Erro -->
+         <div class="sobreposicao-popup-unchecked" id="Popup-erro">
+            <div class="conteudo-popup">
+                
+                <div class="uncheck">
+                    <div class="linha-unchecked-1"></div>
+                    <div class="linha-unchecked-2"></div>
+                </div>
+    
+                <h2 id="titulo" >Error!</h2>
+                <p id="texto" ></p>
+                <button class="fechar-popup-unchecked" onclick="fecharPopUp('Popup-erro')">Fechar</button>
+            </div> 
+        </div>
+
+        <script>
+
+            const param = new URLSearchParams(window.location.search)
+            const verif = param.get("status")
+
+
+            if(verif == "true"){
+               mostrarPopup("popup-sucess");
+            }
+            if(verif == "IncS"){
+                mostrarPopup_erro("Popup-erro","texto","A senha está incorreta! <br>Insira a senha antiga antes de proseguir ");
+            }
+            if(verif == "Sri"){
+               mostrarPopup_erro("Popup-erro","texto","Você errou na repetição das senhas! <br>Tente novamente");
+            }
+
+            function mostrarPopup_erro(id,idtexto,texto){
+               document.getElementById(id).style.display = "block";
+               document.getElementById(idtexto).innerHTML = texto
+           }
+
+            function mostrarPopup(id){
+                document.getElementById(id).style.display = "block";
+            }
+    
+            function fecharPopUp(id){
+                document.getElementById(id).style.display = "none";
+            }
+        </script>
+
+   </body>
+</html>

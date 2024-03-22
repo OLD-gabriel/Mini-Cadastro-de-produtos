@@ -1,0 +1,239 @@
+.titulo {
+    color: white;
+}
+
+.trocarsenha {
+    margin-top: 50px;
+    max-width: 400px;
+    text-align: center;
+    min-width: 350px;
+    border: 2px solid white;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    background-color: rgba(248, 248, 248, 0.164);
+    height: 340px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.185);
+}
+
+.input-senha-antiga,
+.input-senha-nova,
+.input-senha-novaR {
+    outline: none;
+    width: 80%;
+    height: 25px;
+    color: white;
+    font-size: 17px;
+    margin: 18px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+.container-Senha-novaR,
+.container-Senha-antiga,
+.container-Senha-nova {
+    position: relative;
+}
+
+.label-antiga,
+.label-senha,
+.label-senhaR {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 20px;
+    transition: 0.7s;
+    cursor: text;
+    font-size: 16px;
+    left: 35px;
+}
+
+input:focus + .label-antiga,
+input:focus + .label-senha,
+input:focus + .label-senhaR {
+    top: 2px;
+    font-size: 12px;
+}
+
+input:valid+.label-antiga,
+input:valid+.label-senha,
+input:valid+.label-senhaR {
+    top: 2px;
+    font-size: 12px;
+}
+
+.enviar{
+    background-color: white;
+    width: 80%;
+    border: none;
+    height: 30px;
+    margin: 10px;
+    border-radius: 20px;
+}
+.enviar:hover{
+    background-color: rgb(209, 209, 209);
+    cursor: pointer;
+}
+
+.uncheck{
+    background-color: rgb(224, 37, 37);
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border-radius: 50%;
+    position: relative;
+}
+
+.linha-unchecked-1{
+    position: absolute;
+    width: 8px;
+    height: 60px;
+    background-color: white;
+    left: 45px;
+    top: 25px;
+    rotate: -40deg;
+    border-radius: 10px;
+}
+
+.linha-unchecked-2{
+    position: absolute;
+    width: 8px;
+    height: 60px;
+    background-color: white;
+    right: 45px;
+    top: 25px;
+    rotate: 40deg;
+    border-radius: 10px;
+}
+.fechar-popup-unchecked{
+    border: none;
+    width: 80%;
+    height: 40px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    background-color: rgb(224, 37, 37);
+    font-size: 20px;
+    box-shadow: 0px 0px 11px 2px #d611118f;
+}
+
+.fechar-popup-unchecked:hover{
+    cursor: pointer;
+    background-color: rgb(192, 30, 30);
+    box-shadow: 0px 0px 11px 2px rgb(199, 30, 30)
+}
+
+.sobreposicao-popup-checked{
+    display: none;
+}
+
+.sobreposicao-popup-unchecked {
+    position: fixed;
+    top: 0;
+    display: none;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.conteudo-popup {
+    position: absolute;
+    top: 50%;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    width: 350px;
+    left: 50%;
+    height: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.sobreposicao-popup-checked,.sobreposicao-popup-unchecked {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.conteudo-popup {
+    position: absolute;
+    top: 50%;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    width: 350px;
+    left: 50%;
+    height: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.conteudo-popup p{
+    font-size: 20px;
+}
+
+
+.fechar-popup {
+    border: none;
+    width: 80%;
+    height: 40px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    background-color: rgb(61,178,51);
+    font-size: 20px;
+    box-shadow: 0px 0px 11px 2px #13a34aa9;
+}
+
+.fechar-popup:hover{
+    cursor: pointer;
+    background-color: rgb(52, 153, 43);
+    box-shadow: 0px 0px 11px 2px #138a40a9;
+}
+
+.img-cheked img{
+    width: 100px;
+}
+
+.check{
+    background-color: rgb(61,178,51);
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border-radius: 50%;
+    position: relative;
+}
+
+.linha-checked-1{
+    position: absolute;
+    width: 8px;
+    height: 30px;
+    background-color: white;
+    left: 33px;
+    top: 46px;
+    rotate: -49deg;
+    border-radius: 10px;
+}
+
+.linha-checked-2{
+    position: absolute;
+    width: 8px;
+    height: 60px;
+    background-color: white;
+    left: 60px;
+    top: 20px;
+    rotate: 35deg;
+    border-radius: 10px;
+}

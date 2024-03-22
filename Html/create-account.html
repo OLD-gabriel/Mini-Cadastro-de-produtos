@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style-global.css">
+    <link rel="stylesheet" href="../css/style-CRT.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="Titulo" >Registrar</h1>
+        <form action="../php/processar-registro.php" method="post">
+           
+            <div class="container-nome">
+                <input type="text" id="nome" name="nome" class="input-nome" required>
+                <label class="label-nome" for="nome">Nome</label>
+            </div>
+                <br>
+            <div class="container-email">
+                <input type="text" id="email" name="email" class="input-email" required>
+                <label class="label-email"  for="email">Email</label>
+            </div>
+            <br>
+            <div class="container-senha">
+                <input type="text" id="senha" name="senha" class="input-senha" required>
+                <label  class="label-senha"  for="senha">Senha</label>
+            </div>
+            <br>
+            <input type="submit" name="enviar" class="enviar" value="Criar Conta">
+        </form>
+        <span class="span-login" > já tem uma conta? <a href="../index.html">Entrar</a></span>
+    </div>
+
+<!-- Pop Up de sucesso -->
+    <div class="sobreposicao-popup-checked" id="popup-sucess">
+        <div class="conteudo-popup">
+            
+            <div class="check">
+                <div class="linha-checked-1"></div>
+                <div class="linha-checked-2"></div>
+            </div>
+
+            <h2>Completo!</h2>
+            <p>Você Se registrou com Sucesso! <br> retorne a pagina de login </p>
+            <button class="fechar-popup" onclick="fecharPopUp('popup-sucess')">Fechar</button>
+        </div>
+    </div>
+    
+        <!-- Pop UP de Erro -->
+         <div class="sobreposicao-popup-unchecked" id="Popup-erro">
+            <div class="conteudo-popup">
+                
+                <div class="uncheck">
+                    <div class="linha-unchecked-1"></div>
+                    <div class="linha-unchecked-2"></div>
+                </div>
+    
+                <h2>Error!</h2>
+                <p>Este Email já está cadastrado! <br>Tente novamente com outro email. </p>
+                <button class="fechar-popup-unchecked" onclick="fecharPopUp('Popup-erro')">Fechar</button>
+            </div> 
+        </div>
+
+    <script>
+
+        function Getparamentros(nome){
+            const URLparams = new URLSearchParams(window.location.search)
+            return URLparams.get(nome)
+            console.log("função realizada...")
+        }
+
+        const verificar_param = Getparamentros("sucess")
+
+            if(verificar_param === "true"){
+                mostrarPopup("popup-sucess")
+                console.log("popup sucesso exibido...")
+            }
+            else if(verificar_param === 'false'){
+                mostrarPopup("Popup-erro")
+                console.log("popup falha exibido...")
+            }
+        
+        function mostrarPopup(id){
+            document.getElementById(id).style.display = "block";
+        }
+
+        function fecharPopUp(id){
+            document.getElementById(id).style.display = "none";
+        }
+
+    </script>
+
+
+
+</body>
+</html>
